@@ -923,7 +923,13 @@
                 </div>
                 <div>
                   <h4>Email</h4>
-                  <p>teacherann00@gmail.com</p>
+                  <p>
+                    <a
+                      href="mailto:teacherann00@gmail.com"
+                      style="color: white; word-break: break-all"
+                      >teacherann00@gmail.com</a
+                    >
+                  </p>
                 </div>
               </div>
               <div class="contact-item">
@@ -932,7 +938,13 @@
                 </div>
                 <div>
                   <h4>WeChat</h4>
-                  <p>pandaanna00</p>
+                  <p>
+                    <a
+                      href="weixin://dl/chat?pandaanna00"
+                      style="color: white; word-break: break-all"
+                      >pandaanna00</a
+                    >
+                  </p>
                 </div>
               </div>
               <div class="contact-item">
@@ -947,12 +959,13 @@
             </div>
           </div>
           <div class="contact-form">
-            <form>
+            <form onsubmit="mailtoFormSubmit(event)">
               <div class="form-group">
                 <label for="name">Name</label>
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   class="form-control"
                   placeholder="Your Name"
                   required
@@ -963,6 +976,7 @@
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   class="form-control"
                   placeholder="Your Email"
                   required
@@ -973,6 +987,7 @@
                 <input
                   type="number"
                   id="student-age"
+                  name="student-age"
                   class="form-control"
                   placeholder="Student's Age"
                   required
@@ -982,6 +997,7 @@
                 <label for="message">Message</label>
                 <textarea
                   id="message"
+                  name="message"
                   class="form-control"
                   placeholder="Your Message"
                   required
@@ -1037,6 +1053,45 @@
         </div>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init('YOUR_USER_ID'); // Replace with your EmailJS user ID
+      })();
+      function sendEmail(e) {
+        e.preventDefault();
+        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target).then(
+          function () {
+            alert('Message sent successfully!');
+          },
+          function (error) {
+            alert('Failed to send message. Please try again.');
+          }
+        );
+      }
+      function mailtoFormSubmit(e) {
+        e.preventDefault();
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var age = document.getElementById('student-age').value;
+        var message = document.getElementById('message').value;
+        var subject = encodeURIComponent('Contact from website');
+        var body = encodeURIComponent(
+          'Name: ' +
+            name +
+            '\n' +
+            'Email: ' +
+            email +
+            '\n' +
+            "Student's Age: " +
+            age +
+            '\n' +
+            'Message: ' +
+            message
+        );
+        window.location.href =
+          'mailto:teacherann00@gmail.com?subject=' + subject + '&body=' + body;
+      }
+    </script>
   </body>
 </html>
-
