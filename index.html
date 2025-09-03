@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crystal Ann Vince - English Teacher | PandaSchool Group</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="5.jpg" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap"
       rel="stylesheet"
@@ -31,18 +33,41 @@
       }
 
       body {
-        font-family: "Poppins", sans-serif;
+        background: url('7.jpg') no-repeat center center fixed;
+        background-size: cover;
+        font-family: 'Poppins', sans-serif;
         color: var(--text);
         background-color: #f9f9f9;
         line-height: 1.6;
         overflow-x: hidden;
+        position: relative;
+      }
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(
+          255,
+          255,
+          255,
+          0.85
+        ); /* Adjust opacity for visibility */
+        pointer-events: none;
+        z-index: 0;
+      }
+      body > * {
+        position: relative;
+        z-index: 1;
       }
 
       h1,
       h2,
       h3,
       h4 {
-        font-family: "Playfair Display", serif;
+        font-family: 'Playfair Display', serif;
         font-weight: 700;
         color: var(--dark);
       }
@@ -81,9 +106,12 @@
         font-size: 1.8rem;
         font-weight: 700;
       }
-
-      .logo i {
-        color: var(--light);
+      .logo-img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       }
 
       nav ul {
@@ -106,7 +134,7 @@
       }
 
       nav a::after {
-        content: "";
+        content: '';
         position: absolute;
         bottom: -5px;
         left: 0;
@@ -123,15 +151,13 @@
 
       .hero {
         padding: 100px 0;
-        background: url("https://placehold.co/1920x800/4ecdc4/ffffff?text=English+Learning")
-          no-repeat center center;
-        background-size: cover;
+        background: rgba(0, 0, 0, 0.4);
         position: relative;
         color: white;
       }
 
       .hero::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
@@ -151,6 +177,8 @@
         font-size: 3.5rem;
         margin-bottom: 20px;
         line-height: 1.2;
+        color: #fff;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
       }
 
       .hero p {
@@ -210,7 +238,7 @@
       }
 
       .section-title h2::after {
-        content: "";
+        content: '';
         position: absolute;
         bottom: 0;
         left: 50%;
@@ -633,7 +661,7 @@
       <div class="container">
         <div class="header-content">
           <div class="logo">
-            <i class="fas fa-chalkboard-teacher"></i>
+            <img src="5.jpg" alt="Logo" class="logo-img" />
             <span>Crystal Ann Vince</span>
           </div>
           <nav>
@@ -654,6 +682,12 @@
     <section class="hero" id="home">
       <div class="container">
         <div class="hero-content">
+          <img
+            src="5.jpg"
+            alt="Logo"
+            class="logo-img"
+            style="margin-bottom: 24px"
+          />
           <h1>Empowering Young Minds Through English</h1>
           <p>
             Dedicated English teacher with 8 years of experience helping
@@ -675,14 +709,15 @@
         </div>
         <div class="about-content">
           <div class="about-img">
-            <img src="3.jpg" alt="Emma Chen" />
+            <img src="3.jpg" alt="Crystal Ann Vince" />
           </div>
           <div class="about-text">
             <h3>Passionate English Educator & Child Development Specialist</h3>
             <p>
-              Hello! I'm Crystal Ann Vince, an experienced English teacher specializing
-              in teaching children aged 5-15, providing personalized lessons using interactive
-              materials such as educational videos and games. With over 8 years of teaching
+              Hello! I'm Crystal Ann Vince, an experienced English teacher
+              specializing in teaching children aged 5-15, providing
+              personalized lessons using interactive materials such as
+              educational videos and games. With over 8 years of teaching
               experience at PandaSchool Group, I've helped hundreds of students
               develop their English skills while nurturing their confidence and
               love for learning.
@@ -695,11 +730,10 @@
               individual qualities.
             </p>
             <p>
-              I hold a Bachelor's degree in Education from Perdue University 
-              in English Culture and Literature and Ma from Charles University.
-              I am certified in TEFL and Child Psychology.
-              My classes are designed to be engaging, interactive, and tailored to
-              each student's needs.
+              I hold a Bachelor's degree in Education from Perdue University in
+              English Culture and Literature and Ma from Charles University. I
+              am certified in TEFL and Child Psychology. My classes are designed
+              to be engaging, interactive, and tailored to each student's needs.
             </p>
             <a href="#" class="btn">Download Resume</a>
           </div>
@@ -793,7 +827,7 @@
         <div class="testimonial-slider">
           <div class="testimonial">
             <div class="testimonial-text">
-              "Crystal Ann  has been a wonderful teacher for our daughter. She's
+              "Crystal Ann has been a wonderful teacher for our daughter. She's
               incredibly patient and creates such a positive atmosphere in her
               classes. Our daughter now looks forward to her English lessons and
               has become much more confident speaking in English."
@@ -825,10 +859,10 @@
           <div class="package-card">
             <h3>Back to School Special</h3>
             <div class="package-price">15% OFF</div>
-            <p>Save 15% on every class when you book before September 30th!</p>
+            <p>Save 50% on every class when you book before September 30th!</p>
             <div class="package-features">
               <ul>
-                <li>✅ 15% discount per class</li>
+                <li>✅ 50% discount per class</li>
                 <li>✅ Valid for all new students</li>
                 <li>✅ No minimum commitment</li>
                 <li>✅ Flexible scheduling</li>
@@ -894,11 +928,11 @@
               </div>
               <div class="contact-item">
                 <div class="contact-icon">
-                  <i class="fas fa-phone"></i>
+                  <i class="fab fa-weixin"></i>
                 </div>
                 <div>
-                  <h4>Phone</h4>
-                  <p></p>
+                  <h4>WeChat</h4>
+                  <p>pandaanna00</p>
                 </div>
               </div>
               <div class="contact-item">
@@ -996,15 +1030,12 @@
           </div>
         </div>
         <div class="copyright">
-          <p>&copy; 2023 Crystal Ann Vince | PandaSchool Group. All Rights Reserved.</p>
+          <p>
+            &copy; 2023 Crystal Ann Vince | PandaSchool Group. All Rights
+            Reserved.
+          </p>
         </div>
       </div>
     </footer>
   </body>
 </html>
-
-
-
-
-
-
